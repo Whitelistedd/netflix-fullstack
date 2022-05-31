@@ -1,8 +1,8 @@
 1,166 / 5,000
 Translation results
-# Название проекта
+# VolxFlex
 
-#netflix-fullstack.vercel.app
+# netflix-fullstack.vercel.app
 
 У меня возникла идея просто сделать клон netflix, потому что я хотел проверить свои навыки и сделать их «сложную» анимацию и дизайн страниц.
 
