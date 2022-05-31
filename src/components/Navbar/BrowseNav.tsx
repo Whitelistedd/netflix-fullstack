@@ -10,7 +10,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 export const BrowseNav : React.FC = () => {
 
-  const [fixed,setFixed] = useState(false)
+  const [fixed,setFixed] = useState(true)
   const { logout } = useAuth0();
 
   const listenScrollEvent = () => {

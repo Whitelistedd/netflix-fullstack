@@ -10,6 +10,7 @@ import { Browse } from "./pages/Browse";
 import { Splash } from "./components/Splash/Splash";
 import { useAuth0 } from "@auth0/auth0-react";
 import PrivateRoutes from "./utils/PrivateRoutes";
+import { Play } from "./pages/Play";
 
 const App : React.FC = () => {
 
@@ -30,6 +31,7 @@ const App : React.FC = () => {
           <Route path="/Profiles" element={<Profiles />} />
           <Route path="/Browse" element={<Browse />} />
           <Route path="/Splash" element={<Splash />} />
+          <Route path="/play" element={<Play />} />
         </Route>
       </Routes>
     </BrowserRouter>

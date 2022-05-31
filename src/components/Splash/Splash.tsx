@@ -34,8 +34,8 @@ const Container = styled.div`
 `
 
 const Video = styled.video`
-background-color: black;
-height: 100%;
-width: 100%;
+  background-color: #020102;
+  height: 100%;
+  width: 100%;
 `
 
