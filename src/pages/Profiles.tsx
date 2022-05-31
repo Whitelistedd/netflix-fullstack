@@ -5,6 +5,30 @@ import { AuthNav } from '../components/Navbar/AuthNav'
 import Profile1 from "../Images/profile1.jpg"
 import Profile2 from "../Images/profile2.jpg"
 
+// Страница выбора профиля
+
+export const Profiles : React.FC = () => {
+  return (
+      <Container>
+            <AuthNav />
+            <Wrap>
+                <Title>Кто собирается смотреть?</Title>
+                <ProfileSelection>
+                {ExistingProfiles.map((profile,index) =>
+                    <Anchor key={index} to={"/browse"}>
+                    <Profile>
+                        <ProfileImage src={profile.Image} />
+                        <ProfileName>{profile.name}</ProfileName>
+                    </Profile>
+                    </Anchor>
+                )}
+                </ProfileSelection>
+                <Button>УПРАВЛЯТЬ ПРОФИЛЯМИ</Button>
+            </Wrap>
+      </Container>
+  )
+}
+
 const ExistingProfiles = [
     {
         name: "Volxen",
@@ -45,10 +69,9 @@ const ProfileSelection = styled.div`
 `
 
 const Profile = styled.div`
-    padding: 5px;
+    padding: 10px;
     &:hover {
         cursor: pointer;
-        padding: 0px;
         img {
             border: 5px solid white;
         }
@@ -84,27 +107,3 @@ const Button = styled.button`
         cursor: pointer;
     }
 `
-
-// Страница выбора профиля
-
-export const Profiles : React.FC = () => {
-  return (
-      <Container>
-            <AuthNav />
-            <Wrap>
-                <Title>Кто собирается смотреть?</Title>
-                <ProfileSelection>
-                {ExistingProfiles.map((profile,index) =>
-                    <Anchor key={index} to={"/browse"}>
-                    <Profile>
-                        <ProfileImage src={profile.Image} />
-                        <ProfileName>{profile.name}</ProfileName>
-                    </Profile>
-                    </Anchor>
-                )}
-                </ProfileSelection>
-                <Button>УПРАВЛЯТЬ ПРОФИЛЯМИ</Button>
-            </Wrap>
-      </Container>
-  )
-}

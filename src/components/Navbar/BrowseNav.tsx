@@ -4,6 +4,55 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import Profile1 from "../../Images/profile1.jpg"
+import { useAuth0 } from '@auth0/auth0-react';
+
+// панель навигации для просмотра фильмов
+
+export const BrowseNav : React.FC = () => {
+
+  const [fixed,setFixed] = useState(false)
+  const { logout } = useAuth0();
+
+  const listenScrollEvent = () => {
+    if (window.scrollY < 73) {
+      return setFixed(true)
+    } else if (window.scrollY > 70) {
+      return setFixed(false)
+    } 
+  }
+
+  useEffect(() => {
+  window.addEventListener('scroll', listenScrollEvent);
+
+  return () =>
+    window.removeEventListener('scroll', listenScrollEvent);
+  }, []);
+
+  return (
+    <Container fixed={fixed} >
+        <NavLink to={"/"}>
+        <Logo src={Netflix} />
+        </NavLink>
+        <Categories>
+          <Category>Home</Category>
+          <Category>TV Series</Category>
+          <Category>Movies</Category>
+          <Category>New & Popular</Category>
+          <Category>My list</Category>
+        </Categories>
+        <SearchIcon />
+        <Profile onClick={() => logout({ returnTo: "http://localhost:3000/" })} >
+        <Image src={Profile1} />
+        </Profile>
+    </Container>
+  )
+}
+
+const Profile = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 const Container = styled.nav<{fixed: Boolean}>`
   display: flex;
@@ -49,42 +98,3 @@ const Category = styled.li`
 const Image = styled.img`
   width: 45px
 `
-
-// панель навигации для просмотра фильмов
-
-export const BrowseNav : React.FC = () => {
-
-  const [fixed,setFixed] = useState(false)
-
-  const listenScrollEvent = () => {
-    if (window.scrollY < 73) {
-      return setFixed(true)
-    } else if (window.scrollY > 70) {
-      return setFixed(false)
-    } 
-  }
-
-  useEffect(() => {
-  window.addEventListener('scroll', listenScrollEvent);
-
-  return () =>
-    window.removeEventListener('scroll', listenScrollEvent);
-  }, []);
-
-  return (
-    <Container fixed={fixed} >
-        <NavLink to={"/splash"}>
-        <Logo src={Netflix} />
-        </NavLink>
-        <Categories>
-          <Category>Home</Category>
-          <Category>TV Series</Category>
-          <Category>Movies</Category>
-          <Category>New & Popular</Category>
-          <Category>My list</Category>
-        </Categories>
-        <SearchIcon />
-        <Image src={Profile1} />
-    </Container>
-  )
-}

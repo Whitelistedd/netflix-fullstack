@@ -4,6 +4,48 @@ import ImageSrc from "../../Images/tvImg.svg"
 import NetflixMobile from "../../Images/netflixMobile.jpg"
 import MacImg from "../../Images/MacImg.svg"
 
+export const Subparts : React.FC = () => {
+  return (
+    <Container>
+        <SubpartWrap>
+            <TitleWrap>
+                <Title>
+                Enjoy on your TV.
+                </Title>
+                <Description>
+                Watch on Smart TVs, Playstation, Xbox, 
+                Chromecast, Apple TV, Blu-ray players, and more.
+                </Description>
+            </TitleWrap>
+            <Image src={ImageSrc} />
+        </SubpartWrap>
+        <ReversedSubpart>
+            <TitleWrap>
+                <Title>
+                Download your shows to watch offline.
+                </Title>
+                <Description>
+                Save your favorites easily and always have something to watch.
+                </Description>
+            </TitleWrap>
+            <Image src={NetflixMobile} />
+        </ReversedSubpart>
+        <SubpartWrap>
+            <TitleWrap>
+                <Title>
+                Enjoy on your TV.
+                </Title>
+                <Description>
+                Watch on Smart TVs, Playstation, Xbox, 
+                Chromecast, Apple TV, Blu-ray players, and more.
+                </Description>
+            </TitleWrap>
+            <Image src={MacImg} />
+        </SubpartWrap>
+    </Container>
+  )
+}
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -46,45 +88,3 @@ const Image = styled.img`
     z-index: 2;
     width: 30vw;
 `
-
-export const Subparts : React.FC = () => {
-  return (
-    <Container>
-        <SubpartWrap>
-            <TitleWrap>
-                <Title>
-                Enjoy on your TV.
-                </Title>
-                <Description>
-                Watch on Smart TVs, Playstation, Xbox, 
-                Chromecast, Apple TV, Blu-ray players, and more.
-                </Description>
-            </TitleWrap>
-            <Image src={ImageSrc} />
-        </SubpartWrap>
-        <ReversedSubpart>
-            <TitleWrap>
-                <Title>
-                Download your shows to watch offline.
-                </Title>
-                <Description>
-                Save your favorites easily and always have something to watch.
-                </Description>
-            </TitleWrap>
-            <Image src={NetflixMobile} />
-        </ReversedSubpart>
-        <SubpartWrap>
-            <TitleWrap>
-                <Title>
-                Enjoy on your TV.
-                </Title>
-                <Description>
-                Watch on Smart TVs, Playstation, Xbox, 
-                Chromecast, Apple TV, Blu-ray players, and more.
-                </Description>
-            </TitleWrap>
-            <Image src={MacImg} />
-        </SubpartWrap>
-    </Container>
-  )
-}

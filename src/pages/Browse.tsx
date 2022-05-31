@@ -1,14 +1,87 @@
-import React, { useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { BrowseNav } from '../components/Navbar/BrowseNav'
 import HeaderIMG from "../Images/header.jpg"
 import axios from "axios"
 import { publicRequests } from '../requests'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Movies } from '../components/Movies/Movies'
 import { Category } from '../components/Category/Category'
 import { getAllMovies } from '../utils/getAllMovies'
 import PlayArrow from '@mui/icons-material/PlayArrow'
+import { useAuth0 } from '@auth0/auth0-react'
+import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
+
+interface StateType {
+  title: string,
+  data:
+    [
+      {
+        title: string,
+        name?: string,
+        backdrop_path: string,
+        overview: string
+      }
+    ]
+}
+
+interface Response {
+  title: string,
+  data:
+    [
+      {
+        title: string,
+        name?: string,
+        backdrop_path: string,
+        overview: string
+      }
+    ]
+}
+
+
+// Страница для навигации по фильмам
+
+export const Browse = () => {
+
+  const [Categories,SetCategories] = useState<StateType[]>([]);
+
+  useEffect(() => {
+    const getMovies = async () => {
+        const Latest = await getAllMovies("Latest") as Response[]
+        const ActionMovies  = await getAllMovies(28) as Response[]
+        const AnimatedMovies = await getAllMovies(16) as Response[]
+        const HorrorMovies = await getAllMovies(27) as Response[]
+        SetCategories(prev => [...prev,...Latest,...ActionMovies,...AnimatedMovies,...HorrorMovies])
+      }
+
+    getMovies()
+  },[])
+
+  return (
+  <Container>
+        <BrowseNav />
+        <Header backgroundIMG={Categories[0]?.data[0]?.backdrop_path} >
+          <Title>{Categories[0]?.data[0]?.title}</Title>
+          <Buttons>
+            <Anchor to={"/play"}>
+              <PlayButton>
+                <PlayArrow />
+                Play
+              </PlayButton>
+            </Anchor>
+            <Button>More Info</Button>
+          </Buttons>
+          <Desc>{Categories[0]?.data[0]?.overview}</Desc>
+        </Header>
+        <CategoriesWrap>
+        {Categories.map((category,index) => 
+          <Category key={index} title={category.title} MovieData={category.data} />
+        )}
+        </CategoriesWrap>
+    </Container>
+  )
+}
+
 
 const Container = styled.div`
   background-color: rgba(20, 20, 20,1);
@@ -20,7 +93,7 @@ const Container = styled.div`
 const Header = styled.header<{backgroundIMG: string}>`
   background-image: url(https://image.tmdb.org/t/p/original/${props => props.backgroundIMG});
   background-size: cover;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   padding: 0em 5em;
@@ -36,7 +109,7 @@ const Header = styled.header<{backgroundIMG: string}>`
   &::before {
     content: "";
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -109,74 +182,3 @@ const CategoriesWrap = styled.div`
 const Anchor = styled(Link)`
   text-decoration: none;
 `
-
-interface StateType {
-  title: string,
-  data:
-    [
-      {
-        title: string,
-        name?: string,
-        backdrop_path: string,
-        overview: string
-      }
-    ]
-}
-
-interface Response {
-  title: string,
-  data:
-    [
-      {
-        title: string,
-        name?: string,
-        backdrop_path: string,
-        overview: string
-      }
-    ]
-}
-
-
-// Страница для навигации по фильмам
-
-export const Browse : React.FC = () => {
-  const [Categories,SetCategories] = useState<StateType[]>([]);
-
-  useEffect(() => {
-    const getMovies = async () => {
-        const Latest = await getAllMovies("Latest") as Response[]
-        const ActionMovies  = await getAllMovies(28) as Response[]
-        const AnimatedMovies = await getAllMovies(16) as Response[]
-        const HorrorMovies = await getAllMovies(27) as Response[]
-        SetCategories(prev => [...prev,...Latest,...ActionMovies,...AnimatedMovies,...HorrorMovies])
-      }
-
-    getMovies()
-  },[])
-
-  console.log(Categories)
-
-  return (
-    <Container>
-        <BrowseNav />
-        <Header backgroundIMG={Categories[0]?.data[0]?.backdrop_path} >
-          <Title>{Categories[0]?.data[0]?.title}</Title>
-          <Desc>{Categories[0]?.data[0]?.overview}</Desc>
-          <Buttons>
-            <Anchor to={"/play"}>
-              <PlayButton>
-                <PlayArrow />
-                Play
-              </PlayButton>
-            </Anchor>
-            <Button>More Info</Button>
-          </Buttons>
-        </Header>
-        <CategoriesWrap>
-        {Categories.map((category,index) => 
-          <Category key={index} title={category.title} MovieData={category.data} />
-        )}
-        </CategoriesWrap>
-    </Container>
-  )
-}

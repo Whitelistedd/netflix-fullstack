@@ -6,6 +6,34 @@ import { Subparts } from '../components/SubPart/SubPart';
 import { FAQ } from '../components/FAQ/FAQ';
 import { Footer } from '../components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+
+
+const Home : React.FC = () => {
+
+  const { loginWithRedirect } = useAuth0();
+
+  return (
+      <Container>
+        <Header>
+          <Navbar />
+          <Signup>
+            <Title>Unlimited movies, TV shows, and more.</Title>
+            <SubTitle>Watch anywhere. Cancel anytime.</SubTitle>
+            <SignIn onClick={() => loginWithRedirect()} >Get Started</SignIn>
+          </Signup>
+        {/* <HeaderOverlay>
+        </HeaderOverlay> */}
+        </Header>
+        <Subparts />
+        <FAQ />
+        <Footer />
+      </Container>
+  )
+}
+
+export default Home;
+
 
 const Container = styled.div`
   display: flex;
@@ -91,27 +119,3 @@ const Anchor = styled(Link)`
     color: inherit;
     text-decoration: none;
 `
-
-const Home : React.FC = () => {
-  return (
-      <Container>
-        <Header>
-          <Navbar />
-          <Signup>
-            <Title>Unlimited movies, TV shows, and more.</Title>
-            <SubTitle>Watch anywhere. Cancel anytime.</SubTitle>
-            <Anchor to={"/profiles"} >
-            <SignIn>Get Started</SignIn>
-            </Anchor>
-          </Signup>
-        {/* <HeaderOverlay>
-        </HeaderOverlay> */}
-        </Header>
-        <Subparts />
-        <FAQ />
-        <Footer />
-      </Container>
-  )
-}
-
-export default Home;

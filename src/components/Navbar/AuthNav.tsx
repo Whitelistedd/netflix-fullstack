@@ -3,6 +3,19 @@ import Netflix from "../../Images/NetflixLogo.svg"
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+
+// панель навигации для настроек
+
+export const AuthNav : React.FC = () => {
+  return (
+    <Container>
+      <NavLink to={"/splash"}>
+        <Logo src={Netflix} />
+      </NavLink>
+    </Container>
+  )
+}
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -38,15 +51,3 @@ font-size: 12px;
 background-color: #111010;
 border: 1px solid grey
 `
-
-// панель навигации для настроек
-
-export const AuthNav : React.FC = () => {
-  return (
-    <Container>
-      <NavLink to={"/splash"}>
-        <Logo src={Netflix} />
-      </NavLink>
-    </Container>
-  )
-}

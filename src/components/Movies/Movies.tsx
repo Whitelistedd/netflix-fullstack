@@ -3,6 +3,24 @@ import styled from 'styled-components'
 import Add from '@mui/icons-material/Add';
 import PlayArrow from '@mui/icons-material/PlayArrow';
 
+interface MoviesProps {
+    backdrop_path: string,
+    title?: string
+}
+
+export const Movies : React.FC<MoviesProps> = ({title,backdrop_path}) => {
+  return (
+    <Container>
+      <Movie src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
+      <Overlay>
+        <PlayArrow />
+        <Add />
+        <Title>{title}</Title>
+      </Overlay>
+    </Container>
+  )
+}
+
 const Movie = styled.img`
   width: 18vw;
   border-radius: 10px;
@@ -48,21 +66,3 @@ const Container = styled.div`
     }
   }
 `
-
-interface MoviesProps {
-    backdrop_path: string,
-    title?: string
-}
-
-export const Movies : React.FC<MoviesProps> = ({title,backdrop_path}) => {
-  return (
-    <Container>
-      <Movie src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
-      <Overlay>
-        <PlayArrow />
-        <Add />
-        <Title>{title}</Title>
-      </Overlay>
-    </Container>
-  )
-}

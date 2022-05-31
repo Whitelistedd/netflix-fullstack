@@ -1,6 +1,44 @@
 import React from 'react'
 import styled from 'styled-components'
 
+export const Footer : React.FC = () => {
+
+  return (
+    <Container>
+        <Anchor>Questions? Contact us.</Anchor>
+        <Sections>
+            <Section>
+                <Page>FAQ</Page>
+                <Page>Investor Relations</Page>
+                <Page>Privacy</Page>
+                <Page>Speed Test</Page>
+            </Section>
+            <Section>
+                <Page>Help Center</Page>
+                <Page>Jobs</Page>
+                <Page>Cookie Preferences</Page>
+                <Page>Legal Guarantee</Page>
+            </Section>
+            <Section>
+                <Page>Account</Page>
+                <Page>Ways to Watch</Page>
+                <Page>Corporate Information</Page>
+                <Page>Legal Notices</Page>
+            </Section>
+            <Section>
+                <Page>Media Center</Page>
+                <Page>Terms of Use</Page>
+                <Page>Contact Us</Page>
+                <Page>Only on Netflix</Page>
+            </Section>
+        </Sections>
+        <Language>English</Language>
+        <Copyright>Netflix</Copyright>
+    </Container>
+  )
+}
+
+
 const Container = styled.footer`
   display: flex;
   flex-direction: column;
@@ -47,40 +85,3 @@ const Language = styled.button`
 const Copyright = styled.p`
   font-size: 12px;
 `
-
-export const Footer : React.FC = () => {
-
-  return (
-    <Container>
-        <Anchor>Questions? Contact us.</Anchor>
-        <Sections>
-            <Section>
-                <Page>FAQ</Page>
-                <Page>Investor Relations</Page>
-                <Page>Privacy</Page>
-                <Page>Speed Test</Page>
-            </Section>
-            <Section>
-                <Page>Help Center</Page>
-                <Page>Jobs</Page>
-                <Page>Cookie Preferences</Page>
-                <Page>Legal Guarantee</Page>
-            </Section>
-            <Section>
-                <Page>Account</Page>
-                <Page>Ways to Watch</Page>
-                <Page>Corporate Information</Page>
-                <Page>Legal Notices</Page>
-            </Section>
-            <Section>
-                <Page>Media Center</Page>
-                <Page>Terms of Use</Page>
-                <Page>Contact Us</Page>
-                <Page>Only on Netflix</Page>
-            </Section>
-        </Sections>
-        <Language>English</Language>
-        <Copyright>Netflix</Copyright>
-    </Container>
-  )
-}

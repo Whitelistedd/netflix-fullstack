@@ -1,67 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
-    color: white;
-    background-color: black;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 0em;
-    gap: 2em;
-`
-
-const Title = styled.h5`
-    font-size: 2.5rem;
-    text-align: center;
-`
-
-const List = styled.ul`
-    width: 45vw;
-    min-height: 60vh;
-    list-style: none;
-    padding: 0px;
-    display: flex;
-    gap: 2px;
-    flex-direction: column;
-    align-items: center;
-`
-
-const DropDown = styled.li`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-`
-
-const Question = styled.h6`
-    font-size: 1.5rem;
-    font-weight: 500;
-    background-color: #303030;
-    padding: 0.7em 1.2em;
-    &:hover {
-        cursor: pointer;
-    }
-`
-
 interface AnswerProps {
     Open: boolean
 }
-
-const Answer = styled.p`
-  padding: 1em;
-  font-size: 20px;
-`
-
-const AnswerWrap = styled.div<AnswerProps>`
-    background-color: #303030;
-    max-height: ${props => props.Open ? "500px" : "0px"};
-    overflow: hidden;
-    transition: max-height 500ms ease-in-out;
-`
-
 
 export const FAQ : React.FC = () => {
 
@@ -160,3 +102,60 @@ export const FAQ : React.FC = () => {
     </Container>
   )
 }
+
+const Container = styled.div`
+    color: white;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 0em;
+    gap: 2em;
+`
+
+const Title = styled.h5`
+    font-size: 2.5rem;
+    text-align: center;
+`
+
+const List = styled.ul`
+    width: 45vw;
+    min-height: 60vh;
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    align-items: center;
+`
+
+const DropDown = styled.li`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+`
+
+const Question = styled.h6`
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #303030;
+    padding: 0.7em 1.2em;
+    &:hover {
+        cursor: pointer;
+    }
+`
+
+const Answer = styled.p`
+  padding: 1em;
+  font-size: 20px;
+`
+
+const AnswerWrap = styled.div<AnswerProps>`
+    background-color: #303030;
+    max-height: ${props => props.Open ? "500px" : "0px"};
+    overflow: hidden;
+    transition: max-height 500ms ease-in-out;
+`
