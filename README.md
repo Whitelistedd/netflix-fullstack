@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Название Проекта
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Здесь находится один абзац описания проекта.
 
-## Available Scripts
+## Начиная
 
-In the project directory, you can run:
+Эти инструкции помогут вам запустить и запустить копию проекта на вашем локальном компьютере для целей разработки и тестирования. Заметки о том, как развернуть проект в действующей системе, см. в разделе Развертывание.
 
-### `npm start`
+### Предпосылки
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Что вам нужно для установки программного обеспечения и как их установить
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+Приведите примеры
+```
 
-### `npm test`
+### Установка
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Пошаговая серия примеров, которые расскажут вам, как запустить среду разработки.
 
-### `npm run build`
+Скажите, какой будет шаг
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+Приведите пример
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+И повторить
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+пока не закончено
+```
 
-### `npm run eject`
+Завершите примером извлечения некоторых данных из системы или использования их для небольшой демонстрации.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Запуск тестов
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Объясните, как запускать автоматические тесты для этой системы
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Разбить на сквозные тесты
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Объясните, что проверяют эти тесты и почему
 
-## Learn More
+```
+Приведите пример
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### И тесты стиля кодирования
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Объясните, что проверяют эти тесты и почему
 
-### Code Splitting
+```
+Приведите пример
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Развертывание
 
-### Analyzing the Bundle Size
+Добавьте дополнительные примечания о том, как развернуть это в работающей системе.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Создано с
 
-### Making a Progressive Web App
+* [Dropwizard] (http://www.dropwizard.io/1.0.2/docs/) — используемая веб-инфраструктура
+* [Maven](https://maven.apache.org/) — Управление зависимостями
+* [ROME] (https://rometools.github.io/rome/) — используется для создания RSS-каналов.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Содействие
 
-### Advanced Configuration
+Пожалуйста, прочтите [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) для получения подробной информации о нашем кодексе поведения и процессе отправки нам запросов на вытягивание.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Управление версиями
 
-### Deployment
+Мы используем [SemVer](http://semver.org/) для управления версиями. Доступные версии см. в [тегах в этом репозитории](https://github.com/your/project/tags).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Авторы
 
-### `npm run build` fails to minify
+* **Билли Томпсон** - *Начальная работа* - [PurpleBooth] (https://github.com/PurpleBooth)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+См. также список [участников](https://github.com/your/project/contributors), принимавших участие в этом проекте.
+
+## Лицензия
+
+Этот проект находится под лицензией MIT License - подробности см. в файле [LICENSE.md](LICENSE.md).
+
+## Благодарности
+
+* Совет всем, чей код был использован
+* Вдохновение
+* так далее

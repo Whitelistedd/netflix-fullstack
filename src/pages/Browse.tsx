@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { Movies } from '../components/Movies/Movies'
 import { Category } from '../components/Category/Category'
 import { getAllMovies } from '../utils/getAllMovies'
+import PlayArrow from '@mui/icons-material/PlayArrow'
 
 const Container = styled.div`
   background-color: rgba(20, 20, 20,1);
@@ -19,7 +20,7 @@ const Container = styled.div`
 const Header = styled.header<{backgroundIMG: string}>`
   background-image: url(https://image.tmdb.org/t/p/original/${props => props.backgroundIMG});
   background-size: cover;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   padding: 0em 5em;
@@ -35,7 +36,7 @@ const Header = styled.header<{backgroundIMG: string}>`
   &::before {
     content: "";
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -73,24 +74,40 @@ const Buttons = styled.div`
 `
 
 const Button = styled.button`
-  padding: 1em 4em;
+  padding: 0.8em 3em;
   background-color: rgba(255,255,255,0.3);
   border: none;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   border-radius: 5px;
+  transition: 200ms ease;
+  &:hover {
+    background-color: rgba(255,255,255,0.6);
+  }
 `
 
 const PlayButton = styled(Button)`
     background-color: red;
     opacity: 1;
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 30px;
+    }
+    &:hover {
+      background-color: rgba(255,0,0,0.8);
+    }
 `
 
 const CategoriesWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+`
+
+const Anchor = styled(Link)`
+  text-decoration: none;
 `
 
 interface StateType {
@@ -144,9 +161,12 @@ export const Browse : React.FC = () => {
           <Title>{Categories[0]?.data[0]?.title}</Title>
           <Desc>{Categories[0]?.data[0]?.overview}</Desc>
           <Buttons>
-            <Link to={"/play"}>
-              <PlayButton>Play</PlayButton>
-            </Link>
+            <Anchor to={"/play"}>
+              <PlayButton>
+                <PlayArrow />
+                Play
+              </PlayButton>
+            </Anchor>
             <Button>More Info</Button>
           </Buttons>
         </Header>
