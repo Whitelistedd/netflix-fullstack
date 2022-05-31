@@ -19,7 +19,9 @@ const MovieList = styled.ul`
 
 interface CategoryProps {
     MovieData: Array<{
-        backdrop_path: string,title: string
+        backdrop_path: string,
+        title: string,
+        name?: string
     }>,
     title: string
   }
@@ -31,7 +33,7 @@ export const Category : React.FC<CategoryProps> = ({title,MovieData}) => {
             <CategoryTitle>{title}</CategoryTitle>
                 <MovieList>
                     {MovieData.map((category,index) => 
-                    <Movies key={index} title={category.title} backdrop_path={category.backdrop_path} />)
+                    <Movies key={index} title={category.title ? category.title : category.name} backdrop_path={category.backdrop_path} />)
                     }
                 </MovieList>
         </CategoryWrap>

@@ -116,6 +116,7 @@ interface StateType {
     [
       {
         title: string,
+        name?: string,
         backdrop_path: string,
         overview: string
       }
@@ -128,6 +129,7 @@ interface Response {
     [
       {
         title: string,
+        name?: string,
         backdrop_path: string,
         overview: string
       }

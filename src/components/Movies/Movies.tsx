@@ -51,7 +51,7 @@ const Container = styled.div`
 
 interface MoviesProps {
     backdrop_path: string,
-    title: string
+    title?: string
 }
 
 export const Movies : React.FC<MoviesProps> = ({title,backdrop_path}) => {
