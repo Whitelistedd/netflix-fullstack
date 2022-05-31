@@ -9,7 +9,7 @@ root.render(
     <Auth0Provider
         domain="dev-1g-dpise.us.auth0.com"
         clientId="9qhmKJ6qlqnyqTrhKPhYQ1InEN96WGBl"
-        redirectUri={"http://localhost:3000/splash"}
+        redirectUri={process.env.redirectUri}
     >
     <App />
     </Auth0Provider>
