@@ -140,9 +140,9 @@ export const Browse : React.FC = () => {
   return (
     <Container>
         <BrowseNav />
-        <Header backgroundIMG="https://image.tmdb.org/t/p/original//lQxZLeWNdZINBzyzdPr5NbRHL8m.jpg" >
-          <Title>Fantastic Beasts: The Secrets of Dumbledore</Title>
-          <Desc>Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world.</Desc>
+        <Header backgroundIMG={Categories[0]?.data[0]?.backdrop_path} >
+          <Title>{Categories[0]?.data[0]?.title}</Title>
+          <Desc>{Categories[0]?.data[0]?.overview}</Desc>
           <Buttons>
             <Link to={"/play"}>
               <PlayButton>Play</PlayButton>
