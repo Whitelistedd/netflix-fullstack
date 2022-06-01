@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../../MediaQueries'
 
 export const Footer : React.FC = () => {
 
   return (
     <Container>
+      <Wrap>
         <Anchor>Questions? Contact us.</Anchor>
         <Sections>
             <Section>
@@ -34,21 +36,10 @@ export const Footer : React.FC = () => {
         </Sections>
         <Language>English</Language>
         <Copyright>Netflix</Copyright>
+      </Wrap>
     </Container>
   )
 }
-
-
-const Container = styled.footer`
-  display: flex;
-  flex-direction: column;
-  padding: 2em 25em;
-  gap: 10px;
-  background-color: black;
-  border-top: 8px solid #222222;
-  color: #757575;
-  height: 30vh;
-`
 
 const Anchor = styled.a``
 
@@ -60,7 +51,6 @@ const Sections = styled.div`
 `
 
 const Section = styled.div`
-  width: 100%;
   font-size: 12px;
   display: flex;
   flex-direction: column;
@@ -75,13 +65,50 @@ const Page = styled.a`
 `
 
 const Language = styled.button`
-  width: 100px;
+  max-width: 100px;
   background-color: transparent;
   border: 1px solid grey;
-  padding: 1em 1em;
+  padding: 2% 2%;
   color: inherit;
 `
 
 const Copyright = styled.p`
   font-size: 12px;
+`
+
+const Wrap = styled.div`
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
+
+const Container = styled.footer`
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  border-top: 8px solid #222222;
+  color: #757575;
+  width: 100%;
+  padding: 1em 0em;
+  min-height: 30vh;
+  
+  @media only screen and (max-width: ${devices.sm}) {
+    ${Wrap} {
+      align-items: center;
+      font-size: 1.7rem;
+      gap: 30px;
+    }
+    ${Sections} {
+      flex-direction: column;
+      gap: 2.5em;
+      align-items: center;
+      justify-content: center;
+    }
+    ${Section} {
+      align-items: center;
+      font-size: 1.2rem;
+    }
+  }
 `

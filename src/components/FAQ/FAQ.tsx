@@ -121,7 +121,7 @@ const Title = styled.h5`
 `
 
 const List = styled.ul`
-    width: 45vw;
+    max-width: 600px;
     min-height: 60vh;
     list-style: none;
     padding: 0px;

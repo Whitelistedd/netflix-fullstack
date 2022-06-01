@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { AuthNav } from '../components/Navbar/AuthNav'
 import Profile1 from "../Images/profile1.jpg"
 import Profile2 from "../Images/profile2.jpg"
+import { devices } from '../MediaQueries'
 
 // Страница выбора профиля
 
@@ -39,11 +40,6 @@ const ExistingProfiles = [
         Image: Profile2
     },
 ]
-
-const Container = styled.div`
-    background-color: #151514;
-    height: 100vh;
-`
 
 const Wrap = styled.div`
     display: flex;
@@ -106,4 +102,21 @@ const Button = styled.button`
         color: white;
         cursor: pointer;
     }
+`
+
+const Container = styled.div`
+    background-color: #151514;
+    height: 100vh;
+
+    @media only screen and (max-width: ${devices.xsm}) {
+        ${ProfileSelection} {
+            flex-direction: column;
+        }
+        ${Title} {
+            font-size: 1.6em;
+        }
+        ${ProfileImage} {
+            height: 20vh;
+        }
+    } 
 `

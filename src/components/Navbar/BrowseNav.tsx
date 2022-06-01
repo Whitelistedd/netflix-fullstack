@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Netflix from "../../Images/NetflixLogo.svg"
+import LogoIMG from "../../Images/Logo.svg"
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import Profile1 from "../../Images/profile1.jpg"
 import { useAuth0 } from '@auth0/auth0-react';
+import { devices } from '../../MediaQueries';
 
 // панель навигации для просмотра фильмов
 
@@ -31,7 +32,7 @@ export const BrowseNav : React.FC = () => {
   return (
     <Container fixed={fixed} >
         <NavLink to={"/"}>
-        <Logo src={Netflix} />
+        <Logo src={LogoIMG} />
         </NavLink>
         <Categories>
           <Category>Home</Category>
@@ -54,6 +55,29 @@ const Profile = styled.div`
   }
 `
 
+const Logo = styled.img`
+  width: 5vw;
+`
+
+const Categories = styled.ul`
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-right: auto;
+`
+
+const Category = styled.li`
+  font-size: 20px;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+`
+
+const Image = styled.img`
+  width: 45px
+`
+
 const Container = styled.nav<{fixed: Boolean}>`
   display: flex;
   align-items: center;
@@ -74,27 +98,10 @@ const Container = styled.nav<{fixed: Boolean}>`
       cursor: pointer;
     }
   }
-`
 
-const Logo = styled.img`
-  width: 8vw;
-`
-
-const Categories = styled.ul`
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  margin-right: auto;
-`
-
-const Category = styled.li`
-  font-size: 20px;
-  &:hover {
-    opacity: 0.8;
-    cursor: pointer;
+  @media only screen and (max-width: ${devices.md}) {
+    ${Category} {
+      font-size: 15px;
+    }
   }
-`
-
-const Image = styled.img`
-  width: 45px
 `

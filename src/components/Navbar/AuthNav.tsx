@@ -1,5 +1,5 @@
 import React from 'react'
-import Netflix from "../../Images/NetflixLogo.svg"
+import LogoIMG from "../../Images/Logo.svg"
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
@@ -9,8 +9,8 @@ import { NavLink } from 'react-router-dom';
 export const AuthNav : React.FC = () => {
   return (
     <Container>
-      <NavLink to={"/splash"}>
-        <Logo src={Netflix} />
+      <NavLink to={"/"}>
+        <Logo src={LogoIMG} />
       </NavLink>
     </Container>
   )
@@ -28,7 +28,7 @@ const Container = styled.div`
 `
 
 const Logo = styled.img`
-  width: 8vw;
+  width: 5vw;
 `
 
 const SignIn = styled.button`

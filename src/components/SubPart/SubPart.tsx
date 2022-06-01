@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ImageSrc from "../../Images/tvImg.svg"
 import NetflixMobile from "../../Images/netflixMobile.jpg"
 import MacImg from "../../Images/MacImg.svg"
+import { devices } from '../../MediaQueries'
 
 export const Subparts : React.FC = () => {
   return (
@@ -46,14 +47,6 @@ export const Subparts : React.FC = () => {
   )
 }
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    color:white;
-    background-color: grey;
-`
-
 const SubpartWrap = styled.div`
     background-color: black;
     display: flex;
@@ -87,4 +80,30 @@ font-size: 1.5rem;
 const Image = styled.img`
     z-index: 2;
     width: 30vw;
+`
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color:white;
+    background-color: grey;
+    
+    @media only screen and (max-width: ${devices.md}) {
+        ${SubpartWrap} {
+            flex-direction: column;
+        }
+        ${TitleWrap} {
+            width: 50vw;
+        }
+        ${Title} {
+            font-size: 1.5rem;
+        }
+        ${Description} {
+            font-size: 1.1rem;
+        }
+        ${Image} {
+            min-width: 50vw;
+        }
+    }
 `

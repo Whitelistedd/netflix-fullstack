@@ -7,6 +7,7 @@ import { FAQ } from '../components/FAQ/FAQ';
 import { Footer } from '../components/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+import { devices } from '../MediaQueries';
 
 
 const Home : React.FC = () => {
@@ -59,19 +60,6 @@ rgba(0,0,0,0.5) 95%,
 rgba(0,0,0,5) 100% );
 ` */
 
-const Header = styled.header`
-  background: url(${Headerbackground}) center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  background-opacity: 0.5;
-  width: 100%;
-  z-index: 1;
-  height: 600px;
-
-
-`
-
 const Signup = styled.div`
   display: flex;
   flex-direction: column;
@@ -106,16 +94,52 @@ const SignIn = styled.button`
 `
 
 const Title = styled.h1`
-font-size: 4rem;
+font-size: 4em;
 width: 50vw;
 line-height: 1.3em;
 `
 
 const SubTitle = styled.p`
-font-size: 1.7rem;
+font-size: 1.7em;
 `
 
 const Anchor = styled(Link)`
     color: inherit;
     text-decoration: none;
+`
+
+const Header = styled.header`
+  background: url(${Headerbackground}) center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1;
+  height: 600px;
+
+  @media only screen and (max-width: ${devices.lg}) {
+    ${Title} {
+      font-size: 3em
+    }
+    ${SubTitle} {
+      font-size: 1.5em
+    }
+    ${SignIn} {
+      padding: 1em 1.7em;
+      font-size: 1.2rem;
+    }
+  }
+  @media only screen and (max-width: ${devices.md}) {
+    ${Title} {
+      font-size: 2em;
+    }
+    ${SubTitle} {
+      font-size: 1.2em
+    }
+    ${SignIn} {
+      padding: 1em 1.3em;
+      font-size: 1rem;
+    }
+  }
+
 `

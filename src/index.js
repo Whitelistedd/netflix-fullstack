@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Auth0Provider
         domain="dev-1g-dpise.us.auth0.com"
-        clientId="9qhmKJ6qlqnyqTrhKPhYQ1InEN96WGBl"
+        clientId="zyrO0UIZOgGiFahn48tjlWS1VJfAEbH6"
         redirectUri={process.env.REACT_APP_redirectUri}
     >
     <App />

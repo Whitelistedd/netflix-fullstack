@@ -11,6 +11,7 @@ import { getAllMovies } from '../utils/getAllMovies'
 import PlayArrow from '@mui/icons-material/PlayArrow'
 import { useAuth0 } from '@auth0/auth0-react'
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
+import { devices } from '../MediaQueries'
 
 interface StateType {
   title: string,
@@ -82,13 +83,6 @@ export const Browse = () => {
   )
 }
 
-
-const Container = styled.div`
-  background-color: rgba(20, 20, 20,1);
-  min-height: 150vh;
-  color: white;
-  overflow: hidden;
-`
 
 const Header = styled.header<{backgroundIMG: string}>`
   background-image: url(https://image.tmdb.org/t/p/original/${props => props.backgroundIMG});
@@ -176,9 +170,28 @@ const PlayButton = styled(Button)`
 const CategoriesWrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0px;
 `
 
 const Anchor = styled(Link)`
   text-decoration: none;
+`
+
+const Container = styled.div`
+  background-color: rgba(20, 20, 20,1);
+  min-height: 150vh;
+  color: white;
+  overflow: hidden;
+
+  @media only screen and (max-width: ${devices.lg}) {
+    ${Title} {
+      font-size: 2em;
+    }
+    ${Button} {
+      padding: 0.5em 2em;
+    } 
+    ${Desc} {
+      font-size: 1rem;
+    }
+  }
 `

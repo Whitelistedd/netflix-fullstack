@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Add from '@mui/icons-material/Add';
 import PlayArrow from '@mui/icons-material/PlayArrow';
 import { Link } from 'react-router-dom';
+import { devices } from '../../MediaQueries';
 
 interface MoviesProps {
     backdrop_path: string,
@@ -69,6 +70,12 @@ const Container = styled.div`
     ${Overlay} {
       top: -40%;
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: ${devices.md}) {
+    ${Movie} {
+      width: 30vw;
     }
   }
 `
