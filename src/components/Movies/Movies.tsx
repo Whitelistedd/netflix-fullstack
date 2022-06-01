@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Add from '@mui/icons-material/Add';
 import PlayArrow from '@mui/icons-material/PlayArrow';
+import { Link } from 'react-router-dom';
 
 interface MoviesProps {
     backdrop_path: string,
@@ -13,7 +14,9 @@ export const Movies : React.FC<MoviesProps> = ({title,backdrop_path}) => {
     <Container>
       <Movie src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
       <Overlay>
+        <Link to={"/play"} >
         <PlayArrow />
+        </Link>
         <Add />
         <Title>{title}</Title>
       </Overlay>
@@ -34,6 +37,9 @@ const Overlay = styled.div`
     top: -33%;
     opacity: 0;
     transition: 100ms ease-in-out;
+    a {
+      color: inherit;
+    }
 `
 
 const Title = styled.h3`

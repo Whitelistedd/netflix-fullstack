@@ -5,6 +5,15 @@ import play from "../Images/play.mp4"
 
 export const Play = () => {
   
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const SplashInterval = setInterval(() => navigate("/profiles", { replace: true }), 5000)
+  
+    return () => {
+      clearInterval(SplashInterval)
+    }
+  }, [])
 
   return (
     <Container>
