@@ -9,7 +9,7 @@ root.render(
     <Auth0Provider
         domain="dev-1g-dpise.us.auth0.com"
         clientId="9qhmKJ6qlqnyqTrhKPhYQ1InEN96WGBl"
-        redirectUri={process.env.redirectUri}
+        redirectUri={process.env.REACT_APP_redirectUri}
     >
     <App />
     </Auth0Provider>
