@@ -52,8 +52,8 @@ const CategoryWrap = styled.div`
 `
 
 const FrontButton = styled.div`
-  width: 2vw;
-  height: 9vw;
+  width: 20px;
+  height: 16vh;
   z-index: 5;
   display: flex;
   font-size: 3rem;
@@ -61,6 +61,7 @@ const FrontButton = styled.div`
   align-items: center;
   position: absolute;
   right: 0;
+  background-color: #141414;
 
   &:hover {
     cursor: pointer;

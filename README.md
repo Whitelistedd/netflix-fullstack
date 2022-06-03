@@ -1,8 +1,6 @@
-1,166 / 5,000
-Translation results
 # VolxFlex
 
-# netflix-fullstack.vercel.app
+# https://volxflix.vercel.app
 
 У меня возникла идея просто сделать клон netflix, потому что я хотел проверить свои навыки и сделать их «сложную» анимацию и дизайн страниц.
 
@@ -13,7 +11,7 @@ Translation results
 Чтобы скопировать проект git на свой компьютер с помощью Visual Studio
 
 ```
-git pull https://github.com/Whitelistedd/netflix-fullstack.git
+git pull https://github.com/Whitelistedd/volxflix.git
 ```
 
 Установить все пакеты проекта
@@ -43,9 +41,9 @@ npm run build
 ReactJS,
 Typescript,
 Styled-компоненты,
+Auth0,
 Axios.
-
 
 ## Авторы
 
-* **Volxen** - *Начало работы* - [PurpleBooth] (https://github.com/Whitelistedd)
+- **Volxen** - (https://github.com/Whitelistedd)
