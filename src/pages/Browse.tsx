@@ -1,17 +1,12 @@
-import React, { ReactElement, useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { BrowseNav } from '../components/Navbar/BrowseNav'
-import HeaderIMG from "../Images/header.jpg"
-import axios from "axios"
-import { publicRequests } from '../requests'
-import { Link, useNavigate } from 'react-router-dom'
-import { Movies } from '../components/Movies/Movies'
-import { Category } from '../components/Category/Category'
-import { getAllMovies } from '../utils/getAllMovies'
-import PlayArrow from '@mui/icons-material/PlayArrow'
-import { useAuth0 } from '@auth0/auth0-react'
-import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
-import { devices } from '../MediaQueries'
+import PlayArrow from '@mui/icons-material/PlayArrow';
+import React, { ReactElement, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { Category } from '../components/Category/Category';
+import { BrowseNav } from '../components/Navbar/BrowseNav';
+import { devices } from '../MediaQueries';
+import { getAllMovies } from '../utils/getAllMovies';
 
 interface StateType {
   title: string,
@@ -160,7 +155,7 @@ const PlayButton = styled(Button)`
     display: flex;
     align-items: center;
     svg {
-      font-size: 30px;
+      font-size: 30px
     }
     &:hover {
       background-color: rgba(255,0,0,0.8);

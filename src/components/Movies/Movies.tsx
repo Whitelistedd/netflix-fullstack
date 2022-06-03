@@ -1,9 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
 import Add from '@mui/icons-material/Add';
 import PlayArrow from '@mui/icons-material/PlayArrow';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { devices } from '../../MediaQueries';
+import styled from 'styled-components';
 
 interface MoviesProps {
     backdrop_path: string,
@@ -26,7 +25,7 @@ export const Movies : React.FC<MoviesProps> = ({title,backdrop_path}) => {
 }
 
 const Movie = styled.img`
-  width: 18vw;
+  width: 300px;
   border-radius: 10px;
 `
 
@@ -70,12 +69,6 @@ const Container = styled.div`
     ${Overlay} {
       top: -40%;
       opacity: 1;
-    }
-  }
-
-  @media only screen and (max-width: ${devices.md}) {
-    ${Movie} {
-      width: 30vw;
     }
   }
 `
