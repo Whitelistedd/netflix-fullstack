@@ -1,6 +1,9 @@
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { devices } from '../../MediaQueries';
 import { Movies } from '../Movies/Movies';
 
 interface CategoryProps {
@@ -25,7 +28,6 @@ export const Category : React.FC<CategoryProps> = ({title,MovieData}) => {
       setDirectionState(prev => prev + -230)
       setClicksCount(prev => prev + 1)
     }
-    console.log(directionState)
   }
 
   return (
@@ -33,13 +35,13 @@ export const Category : React.FC<CategoryProps> = ({title,MovieData}) => {
         <CategoryWrap>
             <CategoryTitle>{title}</CategoryTitle>
               <MovieContainer>
-                <BackButton onClick={() => handleClick("left")} >{"<"}</BackButton>
+                <BackButton onClick={() => handleClick("left")} ><ArrowBackIosNewIcon /></BackButton>
                   <MovieList transformStat={directionState} >
                     {MovieData.map((category,index) => 
                     <Movies key={index} title={category.title ? category.title : category.name} backdrop_path={category.backdrop_path} />)
                     }
                   </MovieList>
-                <FrontButton onClick={() => handleClick("right")} >{">"}</FrontButton>
+                <FrontButton onClick={() => handleClick("right")} ><ArrowForwardIosIcon /></FrontButton>
               </MovieContainer>
         </CategoryWrap>
     </div>
@@ -49,19 +51,22 @@ export const Category : React.FC<CategoryProps> = ({title,MovieData}) => {
 
 const CategoryWrap = styled.div`
   padding: 1em 0em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 `
 
 const FrontButton = styled.div`
-  width: 20px;
-  height: 16vh;
+  width: 30px;
   z-index: 5;
   display: flex;
-  font-size: 3rem;
-  margin-top: 16px;
   align-items: center;
   position: absolute;
-  right: 0;
-  background-color: #141414;
+  right: 0.9%;
+
+  svg {
+    font-size: 2.5vw;
+  }
 
   &:hover {
     cursor: pointer;
@@ -75,6 +80,7 @@ const BackButton = styled(FrontButton)`
 const MovieContainer = styled.div`
   display: flex;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
 `
 
@@ -84,10 +90,14 @@ const CategoryTitle = styled.h3`
 
 const MovieList = styled.ul<{transformStat: number}>`
   display: flex;
+  margin: 0px;
   width: max-content;
   transition: 200ms ease;
   transform: translateX(${props => props.transformStat}px);
   padding: 0em;
   gap: 30px;
   list-style: none;
+
+  @media only screen and (max-width: ${devices.Laptop}) {
+  }
 `

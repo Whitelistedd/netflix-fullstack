@@ -4,6 +4,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { devices } from '../../MediaQueries';
+
 interface MoviesProps {
     backdrop_path: string,
     title?: string
@@ -12,14 +14,14 @@ interface MoviesProps {
 export const Movies : React.FC<MoviesProps> = ({title,backdrop_path}) => {
   return (
     <Container>
-      <Movie src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
-      <Overlay>
+            <Overlay>
         <Link to={"/play"} >
         <PlayArrow />
         </Link>
         <Add />
         <Title>{title}</Title>
       </Overlay>
+      <Movie src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
     </Container>
   )
 }
@@ -30,12 +32,12 @@ const Movie = styled.img`
 `
 
 const Overlay = styled.div`
-    position: relative;
+    position: absolute;
     left: 0%;
     padding: 0em 1em;
     height: 40%;
-    top: -33%;
     opacity: 0;
+    top: 40%;
     transition: 100ms ease-in-out;
     a {
       color: inherit;
@@ -47,7 +49,6 @@ const Title = styled.h3`
 `
 
 const Container = styled.div`
-
   transition: 200ms ease-in-out;
   svg {
     border: 1px solid white;
@@ -55,6 +56,7 @@ const Container = styled.div`
     z-index: 10;
     border-radius: 50%;
     border: 2px solid white;
+    overflow: hidden;
     font-size: 2vw;
     margin-right: 10px;
     text-shadow: 2px 2px 5px black;
@@ -67,8 +69,13 @@ const Container = styled.div`
     transform: scale(1.1);
     cursor: pointer;
     ${Overlay} {
-      top: -40%;
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: ${devices.Laptop}) {
+    ${Movie} {
+      width: 200px;
     }
   }
 `

@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { AuthNav } from '../components/Navbar/AuthNav'
-import Profile1 from "../Images/profile1.jpg"
-import Profile2 from "../Images/profile2.jpg"
-import { devices } from '../MediaQueries'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { AuthNav } from '../components/Navbar/AuthNav';
+import Profile1 from '../Images/profile1.jpg';
+import Profile2 from '../Images/profile2.jpg';
+import { devices } from '../MediaQueries';
 
 // Страница выбора профиля
 
@@ -108,7 +109,7 @@ const Container = styled.div`
     background-color: #151514;
     height: 100vh;
 
-    @media only screen and (max-width: ${devices.xsm}) {
+    @media only screen and (max-width: ${devices.Phone}) {
         ${ProfileSelection} {
             flex-direction: column;
         }

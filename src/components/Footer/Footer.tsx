@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { devices } from '../../MediaQueries'
+import React from 'react';
+import styled from 'styled-components';
+
+import { devices } from '../../MediaQueries';
 
 export const Footer : React.FC = () => {
 
@@ -94,7 +95,7 @@ const Container = styled.footer`
   padding: 1em 0em;
   min-height: 30vh;
   
-  @media only screen and (max-width: ${devices.sm}) {
+  @media only screen and (max-width: ${devices.Phone}) {
     ${Wrap} {
       align-items: center;
       font-size: 1.7rem;

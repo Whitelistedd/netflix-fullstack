@@ -1,6 +1,6 @@
 export const devices = {
-    lg: "1400px",
-    md: "1100px",
-    sm: "900px",
-    xsm: "600px"
+    Desktop: "1400px",
+    Laptop: "1100px",
+    Tablet: "900px",
+    Phone: "600px"
 }

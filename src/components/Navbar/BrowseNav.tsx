@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import LogoIMG from "../../Images/Logo.svg"
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
-import Profile1 from "../../Images/profile1.jpg"
 import { useAuth0 } from '@auth0/auth0-react';
+import SearchIcon from '@mui/icons-material/Search';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+import LogoIMG from '../../Images/Logo.svg';
+import Profile1 from '../../Images/profile1.jpg';
 import { devices } from '../../MediaQueries';
 
 // панель навигации для просмотра фильмов
@@ -99,7 +100,7 @@ const Container = styled.nav<{fixed: Boolean}>`
     }
   }
 
-  @media only screen and (max-width: ${devices.md}) {
+  @media only screen and (max-width: ${devices.Laptop}) {
     ${Category} {
       font-size: 15px;
     }

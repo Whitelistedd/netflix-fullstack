@@ -176,9 +176,10 @@ const Container = styled.div`
   background-color: rgba(20, 20, 20,1);
   min-height: 150vh;
   color: white;
-  overflow: hidden;
+  width: 100%;
+  overflow:hidden;
 
-  @media only screen and (max-width: ${devices.lg}) {
+  @media only screen and (max-width: ${devices.Desktop}) {
     ${Title} {
       font-size: 2em;
     }

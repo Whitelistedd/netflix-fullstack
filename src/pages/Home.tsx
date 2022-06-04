@@ -1,12 +1,13 @@
+import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import React from "react"
-import Headerbackground from "../Images/LandingPageHeader.jpg"
-import { Navbar } from '../components/Navbar/Navbar';
-import { Subparts } from '../components/SubPart/SubPart';
+
 import { FAQ } from '../components/FAQ/FAQ';
 import { Footer } from '../components/Footer/Footer';
-import { Link } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
+import { Navbar } from '../components/Navbar/Navbar';
+import { Subparts } from '../components/SubPart/SubPart';
+import Headerbackground from '../Images/LandingPageHeader.jpg';
 import { devices } from '../MediaQueries';
 
 
@@ -117,7 +118,7 @@ const Header = styled.header`
   z-index: 1;
   height: 600px;
 
-  @media only screen and (max-width: ${devices.lg}) {
+  @media only screen and (max-width: ${devices.Desktop}) {
     ${Title} {
       font-size: 3em
     }
@@ -129,7 +130,7 @@ const Header = styled.header`
       font-size: 1.2rem;
     }
   }
-  @media only screen and (max-width: ${devices.md}) {
+  @media only screen and (max-width: ${devices.Laptop}) {
     ${Title} {
       font-size: 2em;
     }

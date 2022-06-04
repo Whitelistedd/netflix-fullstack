@@ -1,9 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import ImageSrc from "../../Images/tvImg.svg"
-import NetflixMobile from "../../Images/netflixMobile.jpg"
-import MacImg from "../../Images/MacImg.svg"
-import { devices } from '../../MediaQueries'
+import React from 'react';
+import styled from 'styled-components';
+
+import MacImg from '../../Images/MacImg.svg';
+import NetflixMobile from '../../Images/netflixMobile.jpg';
+import ImageSrc from '../../Images/tvImg.svg';
+import { devices } from '../../MediaQueries';
 
 export const Subparts : React.FC = () => {
   return (
@@ -89,7 +90,7 @@ const Container = styled.div`
     color:white;
     background-color: grey;
     
-    @media only screen and (max-width: ${devices.md}) {
+    @media only screen and (max-width: ${devices.Laptop}) {
         ${SubpartWrap} {
             flex-direction: column;
         }
