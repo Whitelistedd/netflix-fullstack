@@ -1,6 +1,5 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { FAQ } from '../components/FAQ/FAQ';
@@ -10,10 +9,9 @@ import { Subparts } from '../components/SubPart/SubPart';
 import Headerbackground from '../Images/LandingPageHeader.jpg';
 import { devices } from '../MediaQueries';
 
-
 const Home : React.FC = () => {
 
-  const { loginWithRedirect } = useAuth0();
+  const navigate = useNavigate()
 
   return (
       <Container>
@@ -22,10 +20,8 @@ const Home : React.FC = () => {
           <Signup>
             <Title>Unlimited movies, TV shows, and more.</Title>
             <SubTitle>Watch anywhere. Cancel anytime.</SubTitle>
-            <SignIn onClick={() => loginWithRedirect()} >Get Started</SignIn>
+            <SignIn onClick={() => navigate("/splash", {replace: true})} >войти анонимно</SignIn>
           </Signup>
-        {/* <HeaderOverlay>
-        </HeaderOverlay> */}
         </Header>
         <Subparts />
         <FAQ />

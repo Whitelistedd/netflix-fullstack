@@ -43,7 +43,7 @@ export const BrowseNav : React.FC = () => {
           <Category>My list</Category>
         </Categories>
         <SearchIcon />
-        <Profile onClick={() => logout({ returnTo: "https://volxflex.vercel.app/" })} >
+        <Profile >
         <Image src={Profile1} />
         </Profile>
     </Container>

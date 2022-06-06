@@ -1,16 +1,12 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import React from "react"
-import Home from './pages/Home'
-import { Profiles } from "./pages/Profiles";
-import { Browse } from "./pages/Browse";
-import { Splash } from "./components/Splash/Splash";
-import { useAuth0 } from "@auth0/auth0-react";
-import PrivateRoutes from "./utils/PrivateRoutes";
-import { Play } from "./pages/Play";
+import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { Splash } from './components/Splash/Splash';
+import { Browse } from './pages/Browse';
+import Home from './pages/Home';
+import { Play } from './pages/Play';
+import { Profiles } from './pages/Profiles';
 
 const App : React.FC = () => {
 
@@ -27,12 +23,12 @@ const App : React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="" element={<Home />} />
-        <Route path="/" element={<PrivateRoutes/>}>
+        {/* <Route path="/" element={<PrivateRoutes/>}>  для реального входа и без анонимного входа */}
           <Route path="/Profiles" element={<Profiles />} />
           <Route path="/Browse" element={<Browse />} />
           <Route path="/Splash" element={<Splash />} />
           <Route path="/play" element={<Play />} />
-        </Route>
+        {/* </Route> */}
       </Routes>
     </BrowserRouter>
   )
